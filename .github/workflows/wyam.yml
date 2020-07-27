@@ -1,0 +1,28 @@
+name: Wyam
+
+on:
+  push:
+    branches:
+    - source  # default branch
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 2.1.802
+    - name: Install Wyam
+      run: dotnet tool install --tool-path . wyam.tool
+    - name: Publish blog
+      run: ./wyam -r blog -t Phantom
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v2.5.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: master  # deploying branch
+        PUBLISH_DIR: ./output
