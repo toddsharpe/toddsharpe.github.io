@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "2022-04-23 - Setting up github pages"
+date:   2022-04-23
+categories: notes
+---
+Decided to finally bite the bullet and set up Github Pages. Found these pages helpful:
+* <https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/about-github-pages-and-jekyll>
+* <https://jekyllrb.com/docs/>
+
+I had to add webrick to the bundle manually as that page says.
+```
+bundle add webrick
+```
+
+Serving this page from ruby command prompt:
+```
+bundle exec jekyll serve
+```
+
+WIll just be a collection of notes I take while working on projects. Not quite as polished as <https://fabiensanglard.net/> but something along the lines looks wise.

@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "2022-05-02 - Rust for MetalOS"
+date:   2022-05-02
+categories: notes
+---
+Turns out bindgen does c++ with an argument to clang.
+```
+-x c++
+```
+
+Full header compiles.
